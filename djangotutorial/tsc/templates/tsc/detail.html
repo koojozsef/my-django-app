@@ -1,0 +1,10 @@
+<form method="post"></form>
+<fieldset>
+    <legend><h1>{{ scene.scene_id }}</h1></legend>
+    <legend><h2>{{ scene.scene_description }}</h2></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% for object in scene.object_set.all %}
+        <label for="object{{ forloop.counter }}">{{ object }}</label><br>
+    {% endfor %}
+</fieldset>
+</form>

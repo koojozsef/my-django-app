@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'tsc/style.css' %}">
+
+{% if scene_list %}
+    <ul>
+    {% for scene in scene_list %}
+        <li><a href="{% url 'tsc:detail' scene.id %}">{{ scene }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No scenes are available.</p>
+{% endif %}
